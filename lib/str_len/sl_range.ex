@@ -197,6 +197,11 @@ defmodule SLRange do
     sp2 - st2 - (sp_min - st_max)
   end
 
+  def redistribute(array, %{start: a, stop: a}, %{start: new_min, stop: new_max}) do
+    val = new_min + (new_max - new_min) / 2
+    Enum.map(array, fn _ -> val end)
+  end
+
   def redistribute(array, %{start: old_min, stop: old_max}, %{start: new_min, stop: new_max}) do
     Enum.map(array, &((&1 - old_min) * (new_max - new_min) / (old_max - old_min) + new_min))
   end
