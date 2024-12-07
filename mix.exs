@@ -4,7 +4,7 @@ defmodule StrLen.MixProject do
   def project do
     [
       app: :str_len,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.17",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -21,7 +21,7 @@ defmodule StrLen.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:rustler, "~> 0.34.0"},
+      {:rustler, "~> 0.35.0"},
       {:jason, ">= 0.0.0"},
       {:ecto, ">= 0.0.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
